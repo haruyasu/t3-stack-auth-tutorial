@@ -345,6 +345,9 @@ export const authRouter = router({
             },
           }),
         ])
+
+        // メールの送信
+        await sendResetPassword({ userId: foundToken.userId })
       } catch (error) {
         console.log(error)
 
